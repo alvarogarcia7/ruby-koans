@@ -25,6 +25,7 @@ class AboutNil < Neo::Koan
     assert_equal true, nil.nil?
     assert_equal "", nil.to_s
     assert_equal "nil", nil.inspect
+    assert_equal "\"nil\"", "nil".inspect
 
     # THINK ABOUT IT:
     #
