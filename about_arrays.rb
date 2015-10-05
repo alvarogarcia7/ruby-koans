@@ -28,19 +28,16 @@ class AboutArrays < Neo::Koan
 
   end
 
-  def equal(element1, element2, element3)
-    assert_equal element1, element2
-    assert_equal element2, element3
+  def equal(*elements)
+    first = elements[0]
+    elements.each {|x| assert_equal first, x}
   end
 
   def test_accessing_array_elements
     array = [:peanut, :butter, :and, :jelly]
 
     assert equal :peanut, array[0], array.first
-    assert_equal :peanut, array.first
-    assert_equal :jelly, array[3]
-    assert_equal :jelly, array.last
-    assert_equal :jelly, array[-1]
+    assert equal :jelly, array[3], array.last, array[-1]
     assert_equal :butter, array[-3]
   end
 
