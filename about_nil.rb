@@ -35,6 +35,8 @@ class AboutNil < Neo::Koan
     # or
     #    obj == nil
     # Why?
+    #
+    # Answer: I guess nil? because you could redefine it
   end
 
 end
