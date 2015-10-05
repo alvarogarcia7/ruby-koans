@@ -22,6 +22,10 @@ class AboutArrays < Neo::Koan
 
     array[9] = 10
     assert_equal [1,2,333,nil,nil,nil,nil,nil,nil,10], array
+
+    array << 11
+    assert_equal [1,2,333,nil,nil,nil,nil,nil,nil,10,11], array
+
   end
 
   def test_accessing_array_elements
