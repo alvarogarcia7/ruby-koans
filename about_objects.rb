@@ -21,7 +21,15 @@ class AboutObjects < Neo::Koan
 
   def test_every_object_has_an_id
     obj = Object.new
-    assert_equal __, obj.object_id.class
+    assert_equal Fixnum, obj.object_id.class
+
+    #bash-3.1$ irb
+    #irb(main):001:0> Object.new
+    #=> #<Object:0x20d4dd0>
+    #irb(main):002:0> Object.new.object_id
+    #=> 16997988
+    #irb(main):003:0> Object.new.object_id.class
+    #=> Fixnum
   end
 
   def test_every_object_has_different_id
