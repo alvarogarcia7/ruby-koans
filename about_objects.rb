@@ -46,6 +46,21 @@ class AboutObjects < Neo::Koan
     # What pattern do the object IDs for small integers follow?
 
     # Answer: it seems to be f(n) = 2*n + 1
+
+    # This does not seem to hold for Float
+    #irb(main):001:0> 1.5.object_id
+    #=> 18000324
+    #irb(main):002:0> 1.5.object_id
+    #=> 17780496
+    #irb(main):003:0> 1.5.object_id
+    #=> 17032776
+    #irb(main):004:0> 1.5.object_id
+
+    #but the classes are always the same:
+    #irb(main):007:0> 1.5.class.object_id
+    #=> 11377956
+    #irb(main):008:0> 1.5.class.object_id
+    #=> 11377956
   end
 
   def test_clone_creates_a_different_object
