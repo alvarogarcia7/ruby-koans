@@ -31,6 +31,8 @@ class AboutHashes < Neo::Koan
     # THINK ABOUT IT:
     #
     # Why might you want to use #fetch instead of #[] when accessing hash keys?
+
+    # Answer: when you want an exception thrown instead of returning a nil
   end
 
   def test_changing_hashes
