@@ -44,6 +44,8 @@ class AboutRegularExpressions < Neo::Koan
   #
   # Why?
 
+  # Because it will match as many as possible in the first operators, possibly leaving no matches for latter operators
+
   # ------------------------------------------------------------------
 
   def test_the_left_most_match_wins
