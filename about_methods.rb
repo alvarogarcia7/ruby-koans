@@ -158,8 +158,10 @@ class AboutMethods < Neo::Koan
 
   def test_calling_private_methods_in_other_objects
     rover = Dog.new
-    assert_raise(NoMethodError) do
+    exception = assert_raise(NoMethodError) do
       rover.tail
     end
+
+    assert_match /private method/, exception.message
   end
 end
