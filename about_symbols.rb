@@ -27,6 +27,10 @@ class AboutSymbols < Neo::Koan
     #self.methods.map { |x| puts x }
     symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
     assert_equal true, symbols_as_strings.include?("test_method_names_become_symbols")
+
+
+    # Can also search in this class only
+    assert_equal self.methods.map { |x| x.to_s }.include?("test_method_names_become_symbols")
   end
 
   # THINK ABOUT IT:
