@@ -151,6 +151,15 @@ EOS
     assert_equal 'a', string[1]
 
     # Surprised?
+
+    #irb(main):123:0> "Bacon, lettuce and tomato"[1]
+    #=> "a"
+    #irb(main):124:0> "Bacon, lettuce and tomato"[1]==:a
+    #=> false
+    #irb(main):125:0> "Bacon, lettuce and tomato"[1]=='a'
+    #=> true
+    #irb(main):126:0> "Bacon, lettuce and tomato"[1]=="a"
+    #=> true
   end
 
   in_ruby_version("1.8") do
