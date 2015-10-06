@@ -44,6 +44,24 @@ class AboutHashes < Neo::Koan
 
     # Bonus Question: Why was "expected" broken out into a variable
     # rather than used as a literal?
+
+    # Answer: Because assert_equal { :one => "eins", :two => "dos" }, hash
+    # produces a syntax error
+    #about_hashes.rb:42: syntax error, unexpected tASSOC, expecting '}' (SyntaxError)
+    #assert_equal { :one => "eins", :two => "dos" }, hash
+    #                      ^
+    #about_hashes.rb:42: syntax error, unexpected ',', expecting '}'
+    #assert_equal { :one => "eins", :two => "dos" }, hash
+    #                             ^
+    #about_hashes.rb:42: syntax error, unexpected ',', expecting keyword_end
+    #assert_equal { :one => "eins", :two => "dos" }, hash
+    #                                               ^
+
+    # Altough it works if you put it in parenthesis:
+    # assert_equal(({ :one => "eins", :two => "dos" }), hash)
+
+    # Or swap the order
+    # assert_equal hash, { :one => "eins", :two => "dos" }
   end
 
   def test_hash_is_unordered
