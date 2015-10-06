@@ -101,14 +101,20 @@ class AboutHashes < Neo::Koan
     hash1 = Hash.new
     hash1[:one] = 1
 
-    assert_equal __, hash1[:one]
-    assert_equal __, hash1[:two]
+    assert_equal 1, hash1[:one]
+    assert_equal nil, hash1[:two]
 
+    # this is the default value in case we cannot find it
     hash2 = Hash.new("dos")
     hash2[:one] = 1
 
-    assert_equal __, hash2[:one]
-    assert_equal __, hash2[:two]
+    assert_equal 1, hash2[:one]
+    assert_equal "dos", hash2[:two]
+
+    #irb(main):085:0> Hash.new(21)[99]
+    #=> 21
+    #irb(main):086:0> Hash.new(22)[99]
+    #=> 22
   end
 
   def test_default_value_is_the_same_object
