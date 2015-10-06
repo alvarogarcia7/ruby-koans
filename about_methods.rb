@@ -50,9 +50,15 @@ class AboutMethods < Neo::Koan
     [a, b]
   end
 
+  def method_with_defaults_that_depend_on_each_other(a, b=a*10)
+    [a, b]
+  end
+
   def test_calling_with_default_values
     assert_equal [1, :default_value], method_with_defaults(1)
     assert_equal [1, 2], method_with_defaults(1, 2)
+
+    assert_equal [1, 10], method_with_defaults_that_depend_on_each_other(1)
   end
 
   # ------------------------------------------------------------------
