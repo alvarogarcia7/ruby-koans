@@ -122,10 +122,13 @@ class AboutHashes < Neo::Koan
 
     hash[:one] << "uno"
     hash[:two] << "dos"
+    #this is equivalent to:
+    # hash.default << "dos"
 
     assert_equal(({}), hash)
 
     assert_equal ["uno", "dos"], hash[:one]
+    assert_equal ["uno", "dos"], hash.default
     assert_equal ["uno", "dos"], hash[:two]
     assert_equal ["uno", "dos"], hash[:three]
 
