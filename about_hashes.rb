@@ -144,5 +144,22 @@ class AboutHashes < Neo::Koan
     assert_equal ["uno"], hash[:one]
     assert_equal ["dos"], hash[:two]
     assert_equal [], hash[:three]
+
+    #irb(main):114:0> hash = Hash.new {|hash, key| hash[key] = [] }
+    #=> {}
+    #irb(main):115:0> hash
+    #=> {}
+    #irb(main):117:0> hash[1]=1
+    #=> 1
+    #irb(main):118:0> hash
+    #=> {1=>1}
+    #irb(main):119:0> hash[:uno] << "uno"
+    #=> ["uno"]
+    #irb(main):120:0> hash
+    #=> {1=>1, :uno=>["uno"]}
+    #irb(main):121:0> hash[:uno] << "eins"
+    #=> ["uno", "eins"]
+    #irb(main):122:0> hash
+    #=> {1=>1, :uno=>["uno", "eins"]}
   end
 end
