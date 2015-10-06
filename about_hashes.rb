@@ -22,9 +22,10 @@ class AboutHashes < Neo::Koan
 
   def test_accessing_hashes_with_fetch
     hash = { :one => "uno" }
-    assert_equal __, hash.fetch(:one)
-    assert_raise(___) do
+    assert_equal "uno", hash.fetch(:one)
+    exception = assert_raise(KeyError) do
       hash.fetch(:doesnt_exist)
+    assert_match(/key not found/, exception.message)
     end
 
     # THINK ABOUT IT:
