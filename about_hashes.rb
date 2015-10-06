@@ -91,7 +91,7 @@ class AboutHashes < Neo::Koan
     hash = { "jim" => 53, "amy" => 20, "dan" => 23 }
     new_hash = hash.merge({ "jim" => 54, "jenny" => 26 })
 
-    assert_equal true, hash != new_hash
+    assert_not_equal hash, new_hash
 
     expected = { "jim" => 54, "amy" => 20, "dan" => 23, "jenny" => 26 }
     assert_equal true, expected == new_hash
