@@ -132,7 +132,7 @@ class AboutHashes < Neo::Koan
     assert_equal ["uno", "dos"], hash[:two]
     assert_equal ["uno", "dos"], hash[:three]
 
-    assert_equal true, hash[:one].object_id == hash[:two].object_id
+    assert_equal hash[:one].object_id, hash[:two].object_id
   end
 
   def test_default_value_with_block
