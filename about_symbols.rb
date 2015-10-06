@@ -30,7 +30,9 @@ class AboutSymbols < Neo::Koan
 
 
     # Can also search in this class only
-    assert_equal self.methods.map { |x| x.to_s }.include?("test_method_names_become_symbols")
+    assert_equal true, self.methods.map { |x| x.to_s }.include?("test_method_names_become_symbols")
+
+    assert_equal true, self.methods.include?(:test_method_names_become_symbols)
   end
 
   # THINK ABOUT IT:
@@ -43,7 +45,9 @@ class AboutSymbols < Neo::Koan
     def test_constants_become_symbols
       all_symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
 
-      assert_equal __, all_symbols_as_strings.include?(__)
+      assert_equal false, all_symbols_as_strings.include?(:RubyConstant)
+      assert_equal false, all_symbols_as_strings.include?(RubyConstant)
+      assert_equal true, all_symbols_as_strings.include?("RubyConstant")
     end
   end
 
