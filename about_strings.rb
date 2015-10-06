@@ -200,6 +200,9 @@ EOS
   end
 
   def test_strings_are_unique_objects
+
+    # http://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and
+
     a = "a string"
     b = "a string"
 
