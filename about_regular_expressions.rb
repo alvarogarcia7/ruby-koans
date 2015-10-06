@@ -33,6 +33,9 @@ class AboutRegularExpressions < Neo::Koan
     # THINK ABOUT IT:
     #
     # When would * fail to match?
+
+    #irb(main):155:0> "aaa"[/nil*/]
+    #=> nil
   end
 
   # THINK ABOUT IT:
