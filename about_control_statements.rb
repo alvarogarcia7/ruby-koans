@@ -25,7 +25,7 @@ class AboutControlStatements < Neo::Koan
             else
               :false_value
             end
-    assert_equal __, value
+    assert_equal :true_value, value
 
     value = if false
               :true_value
