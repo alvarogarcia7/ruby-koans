@@ -32,7 +32,7 @@ class AboutControlStatements < Neo::Koan
             else
               :false_value
             end
-    assert_equal __, value
+    assert_equal :false_value, value
 
     # NOTE: Actually, EVERY statement in Ruby will return a value, not
     # just if statements.
