@@ -14,6 +14,7 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+	raise TriangleError, "sides cannot be zero" if (a == 0 || b==0 || c==0)
 	return :equilateral if (a==b && b==c)
 	return :isosceles   if (a==b || b==c || a==c)
 	return :scalene
