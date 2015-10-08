@@ -125,13 +125,14 @@ class AboutClasses < Neo::Koan
     assert_match(/wrong number of arguments/, exception.message)
     # THINK ABOUT IT:
     # Why is this so?
+    # wrong number of parameters in the constructor: 0 of 1
   end
 
   def test_different_objects_have_different_instance_variables
     fido = Dog6.new("Fido")
     rover = Dog6.new("Rover")
 
-    assert_equal __, rover.name != fido.name
+    assert_not_equal rover.name, fido.name
   end
 
   # ------------------------------------------------------------------
