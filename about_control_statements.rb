@@ -129,6 +129,7 @@ class AboutControlStatements < Neo::Koan
       result << item.upcase
     end
     assert_equal ["FISH", "AND", "CHIPS"], result
+    assert_equal array.map { |x| x.upcase }, result
   end
 
   def test_times_statement
