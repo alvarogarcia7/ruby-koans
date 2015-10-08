@@ -40,7 +40,7 @@ class AboutIteration < Neo::Koan
     array = [1, 2, 3]
     sum = 0
     array.each { |item| sum += item }
-    assert_equal __, sum
+    assert_equal array.inject(0) { |mem, var|  mem + var}, sum
   end
 
   def test_break_works_with_each_style_iterations
