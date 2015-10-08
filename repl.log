@@ -61,3 +61,23 @@ dog = AboutClasses::Dog2.new
 dog.instance_variables
 dog.set_name "fido"
 dog.instance_variables
+[].push 1
+[] << 1
+Random::new
+Random::new.ta
+Random::new.tap
+Random::new.tap {|x| puts x}
+Random::new.methods
+Random::new.rand
+Random::new.rand*6
+Random::new.rand*6+1
+(Random::new.rand*6+1).floor
+def rand() (Random::new.rand*6+1).floor end
+rand()
+result = []
+1000.times do |x| result[rand()]++ end
+1000.times do |x| result[rand()] += 1 end
+rand << 0
+result << 0
+1000.times do |x| result[rand()] += 1 end
+result
