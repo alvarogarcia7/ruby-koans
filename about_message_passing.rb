@@ -36,6 +36,8 @@ class AboutMessagePassing < Neo::Koan
     # THINK ABOUT IT:
     #
     # Why does Ruby provide both send and __send__ ?
+
+    # In case the user also needs the method send
   end
 
   def test_classes_can_be_asked_if_they_know_how_to_respond
