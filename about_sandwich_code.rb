@@ -81,10 +81,11 @@ class AboutSandwichCode < Neo::Koan
 
   def find_line2(file_name)
     # Rewrite find_line using the file_sandwich library function.
+
   end
 
   def test_finding_lines2
-    assert_equal __, find_line2("example_file.txt")
+    assert_equal find_line("example_file.txt"), find_line2("example_file.txt")
   end
 
   # ------------------------------------------------------------------
