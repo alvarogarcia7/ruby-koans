@@ -33,6 +33,12 @@ def score(dice)
   # You need to write this method
   score = 0
   return score if dice==[]
+  score += count(dice, 5) * 50
+  score
+end
+
+def count(dice, value)
+  dice.select{|x| x==value}.count
 end
 
 class AboutScoringProject < Neo::Koan
