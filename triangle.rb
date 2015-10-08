@@ -15,6 +15,8 @@
 #
 def triangle(a, b, c)
 	raise TriangleError, "sides cannot be zero" if (a == 0 || b==0 || c==0)
+	raise TriangleError, "sides cannot be negative" if (a < 0 || b < 0 || c < 0)
+	raise TriangleError, "two sides cannot be bigger than the other" if (a+b <= c || a+c <= b || b+c <= a)
 	return :equilateral if (a==b && b==c)
 	return :isosceles   if (a==b || b==c || a==c)
 	return :scalene
