@@ -89,6 +89,9 @@ class AboutIteration < Neo::Koan
 
     # Extra Credit:
     # Describe in your own words what inject does.
+
+    # The operation Reduce / foldl
+    # 1 is the initial one, product is the accumulator, item is the current element
   end
 
   def test_all_iteration_methods_work_on_any_collection_not_just_arrays
