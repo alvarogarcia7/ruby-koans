@@ -34,6 +34,7 @@ def score(dice)
   score = 0
   return score if dice==[]
   score += count(dice, 5) * 50
+  score += count(dice, 1) * 100
   score
 end
 
