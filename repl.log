@@ -81,3 +81,13 @@ rand << 0
 result << 0
 1000.times do |x| result[rand()] += 1 end
 result
+def rand() (Random::new.rand*6+1).floor end
+load "about_dice_project"
+load "about_dice_project.rb"
+ds =DiceSet.new
+ds.roll
+ds.roll(5)
+ds.values
+ds.roll(5)
+ds.values
+assert_not_equal

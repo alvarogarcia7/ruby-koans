@@ -10,13 +10,13 @@ class DiceSet
   attr_reader :values
 
   def initialize()
-    @values = []
     @random = Random::new
   end
 
   def roll(value)
+    @values = []
     value.times do |x|
-      values << rand()
+      @values << rand()
     end
   end
 
