@@ -119,9 +119,10 @@ class AboutClasses < Neo::Koan
   end
 
   def test_args_to_new_must_match_initialize
-    assert_raise(___) do
+    exception = assert_raise(ArgumentError) do
       Dog6.new
     end
+    assert_match(/wrong number of arguments/, exception.message)
     # THINK ABOUT IT:
     # Why is this so?
   end
