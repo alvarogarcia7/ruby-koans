@@ -15,6 +15,7 @@
 #
 def triangle(a, b, c)
 	return :equilateral if (a==b && b==c)
+	return :isosceles   if (a==b || b==c || a==c)
 	return :scalene
 end
 
