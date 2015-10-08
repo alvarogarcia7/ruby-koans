@@ -18,3 +18,28 @@ Range::1..10
 [1,3,2,3].select(|x| x==1)
 [1,3,2,3].select{|x| x==1}
 [1,3,2,3].select{|x| x==1}.count
+(2..6).to_a
+(2..6).to_a do |current| puts current end
+(2..6).to_a.each do |current| puts current end
+(2..6).to_a.delete 1
+(1..6).to_a.delete 1
+[1,2,3,4,5,1].delete 1
+x = [1,2,3,4,5,1]
+x.delete 1
+x
+x.detect
+x.detect.each |x| puts x end
+x.detect.each {|x| puts x }
+help detect
+help x.detect
+x = [1,2,3,4,5,1]
+count = 1
+x.delete_if {|x| x==1 && count > 0}
+x
+x.index(1)
+x.index(2)
+x = [1,2,3,4,5,1]
+x.index(1)
+x.delete_at 0
+x
+x.sort
