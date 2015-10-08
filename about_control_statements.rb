@@ -98,7 +98,7 @@ class AboutControlStatements < Neo::Koan
       result = result * i
       i += 1
     end
-    assert_equal __, result
+    assert_equal (1..10).to_a.inject(1) {|x,y| x * y}, result
   end
 
   def test_break_statement_returns_values
