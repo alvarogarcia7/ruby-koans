@@ -33,6 +33,8 @@ def score(dice)
   # You need to write this method
   score = 0
   return score if dice==[]
+  dice,score_delta = remove_three_ones(dice)
+  score += score_delta
   score += count(dice, 5) * 50
   score += count(dice, 1) * 100
   score
@@ -42,6 +44,10 @@ def count(dice, value)
   dice.select{|x| x==value}.count
 end
 
+def remove_three_ones(dice)
+  return dice.select{|x| x != 1}, 1000 if count(dice,1) == 3
+  return dice, 0
+end
 class AboutScoringProject < Neo::Koan
   def test_score_of_an_empty_list_is_zero
     assert_equal 0, score([])
