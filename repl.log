@@ -43,3 +43,21 @@ x.index(1)
 x.delete_at 0
 x
 x.sort
+load Dog
+load about_classes
+load "about_classes"
+load "about_classes.rb"
+Dog.new
+load "about_classes.rb"
+Dog.new
+Dog2.new
+AboutClasses::Dog2.new
+AboutClasses::Dog2.new.class
+AboutClasses::Dog2.instance_variable
+AboutClasses::Dog2.instance_variables
+AboutClasses::Dog2.new
+AboutClasses::Dog2.new.instance_variables
+dog = AboutClasses::Dog2.new
+dog.instance_variables
+dog.set_name "fido"
+dog.instance_variables
