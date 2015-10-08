@@ -91,3 +91,15 @@ ds.values
 ds.roll(5)
 ds.values
 assert_not_equal
+"L".upper
+"L".uppercase
+"L".upcase
+"L".methods
+"L".methods.match(/to/)
+"L".methods.find(/to/)
+"L".methods.find(/to/).size
+"L".methods.find(/to/).count
+"L".methods.find(/to/)
+"L".methods.find(/to/).each(|x| puts x)
+"L".methods.find(/to/).each{|x| puts x}
+"l".downcase
