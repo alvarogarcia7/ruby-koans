@@ -14,15 +14,12 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class Proxy
 
+  attr_reader :messages
 
   def initialize(target_object)
     @object = target_object
-    @messages={}
+    @messages = []
     # ADD MORE CODE HERE
-  end
-
-  def messages
-    @messages.keys
   end
 
   def respond_to?(method_name)
@@ -31,13 +28,8 @@ class Proxy
 
   def method_missing(method_name, *args, &block)
     if @object.respond_to?(method_name)
-      puts args
-      if args==nil || args == []
-        @messages[method_name]=true
-        return @object.send(method_name)
-      else
-        return @object.send(method_name, args[0]) 
-      end
+      @messages.push method_name
+      return @object.send(method_name, *args)
     else
       super(method_name, args, block)
     end
@@ -65,6 +57,7 @@ class AboutProxyObjectProject < Neo::Koan
     assert_equal 10, tv.channel
     assert tv.on?
   end
+
 
   def test_proxy_records_messages_sent_to_tv
     tv = Proxy.new(Television.new)
