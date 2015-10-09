@@ -103,3 +103,13 @@ assert_not_equal
 "L".methods.find(/to/).each(|x| puts x)
 "L".methods.find(/to/).each{|x| puts x}
 "l".downcase
+load "about_proxy_project.rb"
+load "about_proxy_object_project.rb"
+tv = Proxy.new(Television.new)
+tv.power
+Television.new.power
+Television.new.power()
+Television.new.power([])
+load "about_proxy_object_project.rb"
+tv = Proxy.new(Television.new)
+tv.power

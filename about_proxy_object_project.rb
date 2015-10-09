@@ -18,7 +18,22 @@ class Proxy
     # ADD MORE CODE HERE
   end
 
-  # WRITE CODE HERE
+  def respond_to?(method_name)
+    @object.respond_to(method_name)
+  end
+
+  def method_missing(method_name, *args, &block)
+    if @object.respond_to?(method_name)
+      puts args
+      if args==nil || args == []
+        return @object.send(method_name)
+      else
+        return @object.send(method_name, args[0]) 
+      end
+    else
+      super(method_name, args, block)
+    end
+  end
 end
 
 # The proxy object should pass the following Koan:
