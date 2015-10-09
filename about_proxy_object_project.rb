@@ -26,6 +26,10 @@ class Proxy
     @messages.include? method_name
   end
 
+  def number_of_times_called(method_name)
+    @messages.count method_name
+  end
+
   def respond_to?(method_name)
     @object.respond_to(method_name)
   end
