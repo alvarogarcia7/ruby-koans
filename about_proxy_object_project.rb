@@ -22,6 +22,10 @@ class Proxy
     # ADD MORE CODE HERE
   end
 
+  def called?(method_name)
+    @messages.include? method_name
+  end
+
   def respond_to?(method_name)
     @object.respond_to(method_name)
   end
