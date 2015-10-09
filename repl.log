@@ -113,3 +113,20 @@ Television.new.power([])
 load "about_proxy_object_project.rb"
 tv = Proxy.new(Television.new)
 tv.power
+{:a=>:b}[:c]=:d
+x={:a=>:b}
+x[:c]=:d
+x
+{:a=>:b}[:c]=:d
+t=Television.new
+t.methods
+t.public_method
+t.public_methods
+t.public_method
+t.public_methods
+t.protected_methods
+t.pretty_inspect
+t.class.methods
+t.class.methods.inspect
+t.methods.inspect
+t.methods.class

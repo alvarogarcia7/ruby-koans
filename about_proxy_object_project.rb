@@ -13,9 +13,16 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # of the Proxy class is given in the AboutProxyObjectProject koan.
 
 class Proxy
+
+
   def initialize(target_object)
     @object = target_object
+    @messages={}
     # ADD MORE CODE HERE
+  end
+
+  def messages
+    @messages.keys
   end
 
   def respond_to?(method_name)
@@ -26,6 +33,7 @@ class Proxy
     if @object.respond_to?(method_name)
       puts args
       if args==nil || args == []
+        @messages[method_name]=true
         return @object.send(method_name)
       else
         return @object.send(method_name, args[0]) 
